@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.lua'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'libraries'
+    }
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    compileOnly name: 'HytaleServer'
+}
+
+jar {
+    archiveFileName = "LUA.jar"
+}

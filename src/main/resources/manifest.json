@@ -1,0 +1,16 @@
+{
+  "Name": "LUA",
+  "Description": "LUA is plugin, base core API for Hytale mods.",
+  "Version": "1.0.0",
+  "Authors": [
+    {
+      "Name": "Lugr4",
+      "Email": "gravitygames813@gmail.com"
+    }
+  ],
+  "Group": "com.lua",
+  "ServerVersion": "*",
+  "Main": "com.lua.Main",
+  "IncludesAssetPack": false,
+  "DisabledByDefault": false
+}
