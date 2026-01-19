@@ -1,0 +1,30 @@
+@LabelStyle = LabelStyle(FontSize: 18, TextColor: #ffffff);
+@ButtonStyle = TextButtonStyle(Default: (Background: #444444(0.8)));
+
+Group #LUASettingsPanel {
+    Background: #111111(0.95);
+    Anchor: (Width: 400, Height: 300);
+    LayoutMode: Top;
+    Padding: 20;
+
+    Label { Text: "CONFIGURACIÓN LUA CORE"; Style: (FontSize: 22, TextColor: #00fbff); }
+
+    Group { Anchor: (Height: 30); } // Espaciador
+
+    // FILA MODO DEBUG
+    Group {
+        LayoutMode: Center;
+        Anchor: (Width: 360, Height: 40);
+        Label { Text: "Modo Debug:  "; Style: @LabelStyle; }
+        TextButton #BtnDebugToggle { Text: "TOGGLE"; Anchor: (Width: 80, Height: 30); Style: @ButtonStyle; }
+        Label #DebugValue { Text: "OFF"; Anchor: (Width: 50); }
+    }
+
+    Group { FlexWeight: 1; }
+
+    TextButton #BtnSave {
+        Text: "GUARDAR CAMBIOS";
+        Anchor: (Width: 200, Height: 40);
+        Style: (Default: (Background: #008800(0.8)));
+    }
+}

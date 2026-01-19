@@ -1,0 +1,27 @@
+// Exportado desde WayhomeUI
+$C = "../Common.ui";
+
+Group #MainGroup {
+  Anchor: (Left: 0, Top: 0);
+  Background: #ffffff(0.05);
+
+  Group #Groupri6bk {
+    Anchor: (Left: 280, Top: 160, Width: 1250, Height: 750);
+    Background: #ffffff(0.05);
+    $C.@DecoratedContainer #DecoratedContainermbpe7 {
+      LayoutMode: Top;
+      Group #DecoratedContainermbpe7Title {
+        Anchor: (Width: 100, Height: 50);
+        LayoutMode: Top;
+      }
+
+      Group #DecoratedContainermbpe7Content {
+        Anchor: (Width: 100, Height: 50);
+        LayoutMode: Top;
+      }
+
+    }
+
+  }
+
+}

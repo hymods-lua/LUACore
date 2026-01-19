@@ -1,0 +1,8 @@
+{
+  "Id": "lua:settings",
+  "Config": {
+    "DebugMode": true,
+    "Prefix": "[LUA]",
+    "UpdateRate": 2.5
+  }
+}

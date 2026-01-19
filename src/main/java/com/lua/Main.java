@@ -1,20 +1,24 @@
 package com.lua;
 
 import javax.annotation.Nonnull;
-import com.lua.core.bootstrap.Bootstrap;
+import com.lua.core.bootstrap.LuaBootstrap;
 import com.lua.core.LUA;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
+import com.lua.core.command.LuaCollection;
+import com.lua.core.module.LuaConfigModule;
 
 // Main entry point for the Hytale plugin
 public class Main extends JavaPlugin {
-    private final Bootstrap bootstrap;
+    private final LuaBootstrap bootstrap;
 
     public Main(@Nonnull JavaPluginInit init) {
         super(init);
         // Initialize global context and the bootstrap logic
         LUA.init(this);
-        this.bootstrap = new Bootstrap(LUA.getContext());
+        this.bootstrap = new LuaBootstrap(LUA.getContext());
+        this.bootstrap.addModule(new LuaConfigModule());
+
     }
 
     @Override
@@ -27,6 +31,7 @@ public class Main extends JavaPlugin {
     protected void start(){
         // Delegate start phase to the bootstrap
         bootstrap.launchStart();
+        this.getCommandRegistry().registerCommand(new LuaCollection());
     }
 
     @Override

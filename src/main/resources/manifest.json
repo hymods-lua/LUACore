@@ -11,6 +11,6 @@
   "Group": "com.lua",
   "ServerVersion": "*",
   "Main": "com.lua.Main",
-  "IncludesAssetPack": false,
+  "IncludesAssetPack": true,
   "DisabledByDefault": false
 }
