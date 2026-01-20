@@ -8,12 +8,12 @@ import com.lua.core.LuaContext;
 import com.lua.core.config.LuaConfigManager;
 import com.lua.core.config.asset.LuaConfigAsset;
 import com.lua.core.config.asset.LuaConfigCodec;
-import com.lua.core.managers.LuaManager;
+import com.lua.core.managers.LuaManagerContainer;
 
 public class LuaConfigModule implements LuaModule {
     @Override
     public String getId() { return "LuaConfig"; }
-    private final LuaConfigManager configManager = LuaManager.getConfigManager();
+    private final LuaConfigManager configManager = LuaManagerContainer.getConfigManager();
 
     @Override
     public void onSetup(LuaContext context) {

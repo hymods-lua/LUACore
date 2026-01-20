@@ -5,7 +5,7 @@ import com.hypixel.hytale.server.core.command.system.CommandContext;
 import com.hypixel.hytale.server.core.command.system.arguments.system.RequiredArg;
 import com.hypixel.hytale.server.core.command.system.arguments.types.ArgTypes;
 import com.lua.core.config.LuaConfigManager;
-import com.lua.core.managers.LuaManager;
+import com.lua.core.managers.LuaManagerContainer;
 import com.lua.core.utils.LuaText;
 import com.lua.core.utils.LuaJsonUtil;
 
@@ -30,7 +30,7 @@ public class LuaSetConfig extends AbstractCommand {
         String key = keyArg.get(context);
         String value = valArg.get(context);
 
-        LuaConfigManager manager = LuaManager.getConfigManager();
+        LuaConfigManager manager = LuaManagerContainer.getConfigManager();
 
         manager.getById(id).ifPresentOrElse(asset -> {
             // 1. Modificamos el BsonDocument en memoria

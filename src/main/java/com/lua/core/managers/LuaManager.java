@@ -1,13 +1,13 @@
 package com.lua.core.managers;
 
-import com.lua.core.LUA;
-import com.lua.core.config.LuaConfigManager;
+import com.lua.core.LuaContext;
 
 public class LuaManager {
+    public LuaContext context;
 
-    public LuaManager() {}
-
-    public static LuaConfigManager getConfigManager() {
-        return LUA.get(LuaConfigManager.class, () -> new LuaConfigManager(LUA.getContext()));
+    public LuaManager(LuaContext context){
+        this.context = context;
     }
+
+
 }

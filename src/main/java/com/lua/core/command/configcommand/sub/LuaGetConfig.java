@@ -6,7 +6,7 @@ import com.hypixel.hytale.server.core.command.system.CommandContext;
 import com.hypixel.hytale.server.core.command.system.arguments.system.OptionalArg;
 import com.hypixel.hytale.server.core.command.system.arguments.types.ArgTypes;
 import com.lua.core.config.LuaConfigManager;
-import com.lua.core.managers.LuaManager;
+import com.lua.core.managers.LuaManagerContainer;
 import com.lua.core.utils.LuaText;
 
 import javax.annotation.Nonnull;
@@ -26,7 +26,7 @@ public class LuaGetConfig extends AbstractCommand {
     protected CompletableFuture<Void> execute(@Nonnull CommandContext context) {
         Integer keyMax = max.get(context);
         if (keyMax == null) { keyMax = 5; }
-        LuaConfigManager manager = LuaManager.getConfigManager();
+        LuaConfigManager manager = LuaManagerContainer.getConfigManager();
 
         var allItems = manager.getAll();
         context.sendMessage(Message.raw("Total de items registrados en Market: " + allItems.size()));

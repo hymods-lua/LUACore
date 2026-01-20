@@ -7,7 +7,7 @@ import com.hypixel.hytale.server.core.command.system.arguments.system.OptionalAr
 import com.hypixel.hytale.server.core.command.system.arguments.system.RequiredArg;
 import com.hypixel.hytale.server.core.command.system.arguments.types.ArgTypes;
 import com.lua.core.config.LuaConfigManager;
-import com.lua.core.managers.LuaManager;
+import com.lua.core.managers.LuaManagerContainer;
 import com.lua.core.utils.LuaText;
 import com.lua.core.utils.LuaJsonUtil;
 import org.bson.BsonDocument;
@@ -32,7 +32,7 @@ public class LuaGetKeyConfig extends AbstractCommand {
     @Nullable
     protected CompletableFuture<Void> execute(@Nonnull CommandContext context) {
         String id = configArg.get(context);
-        LuaConfigManager manager = LuaManager.getConfigManager();
+        LuaConfigManager manager = LuaManagerContainer.getConfigManager();
 
         manager.getById(id).ifPresentOrElse(asset -> {
             BsonDocument doc = asset.getRawData();

@@ -5,7 +5,7 @@ import com.hypixel.hytale.server.core.command.system.CommandContext;
 import com.hypixel.hytale.server.core.command.system.arguments.system.RequiredArg;
 import com.hypixel.hytale.server.core.command.system.arguments.types.ArgTypes;
 import com.lua.core.config.LuaConfigManager;
-import com.lua.core.managers.LuaManager;
+import com.lua.core.managers.LuaManagerContainer;
 import com.lua.core.utils.LuaText;
 
 import java.util.concurrent.CompletableFuture;
@@ -22,7 +22,7 @@ public class LuaReloadConfig extends AbstractCommand {
     @Override
     protected CompletableFuture<Void> execute(CommandContext context) {
         String id = configArg.get(context);
-        LuaConfigManager manager = LuaManager.getConfigManager();
+        LuaConfigManager manager = LuaManagerContainer.getConfigManager();
 
         // 1. Purgamos y recargamos del disco a la RAM de Hytale (AssetStore)
         manager.reload();
